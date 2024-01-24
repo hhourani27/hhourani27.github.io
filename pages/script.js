@@ -1,4 +1,4 @@
-const ctx = document.getElementById("myChart");
+const canvas = document.getElementById("graph-response-time-per-user-number");
 
 const labels = [10, 50, 100, 150, 200, 250, 270, 300, 500, 1000];
 
@@ -11,6 +11,7 @@ const data = {
       borderWidth: 1,
       borderColor: "blue",
       backgroundColor: "blue",
+      pointStyle: (ctx) => (ctx.parsed.y < 500 ? "circle" : "crossRot"),
     },
     {
       label: "Post tweet (POST /tweets)",
@@ -18,6 +19,7 @@ const data = {
       borderWidth: 1,
       borderColor: "green",
       backgroundColor: "green",
+      pointStyle: (ctx) => (ctx.parsed.y < 500 ? "circle" : "crossRot"),
     },
     {
       label: "Read tweets (GET /tweets?page=1)",
@@ -25,6 +27,7 @@ const data = {
       borderWidth: 1,
       borderColor: "purple",
       backgroundColor: "purple",
+      pointStyle: (ctx) => (ctx.parsed.y < 500 ? "circle" : "crossRot"),
     },
     {
       label: "Baseline (500ms)",
@@ -38,7 +41,7 @@ const data = {
   ],
 };
 
-new Chart(ctx, {
+new Chart(canvas, {
   type: "line",
   data: data,
   options: {
