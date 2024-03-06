@@ -1,5 +1,5 @@
 const canvas = document.getElementById("graph-response-time-per-user-number");
-
+// new comment
 const labels = [10, 50, 100, 150, 200, 250, 270, 300, 500, 1000];
 
 // habib new comment
@@ -42,7 +42,6 @@ const data = {
   ],
 };
 
-// habib new comment
 new Chart(canvas, {
   type: "line",
   data: data,
@@ -84,4 +83,3 @@ new Chart(canvas, {
     },
   },
 });
-// habib new comment
